@@ -1,0 +1,7 @@
+<script>
+  import "../app.css";
+</script>
+
+<main class='w-full max-w-screen-md p-8 mx-auto'>
+  <slot />
+</main>
