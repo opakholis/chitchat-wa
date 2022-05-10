@@ -1,4 +1,7 @@
 <script lang="ts">
+	const title = 'WhatsApp 에 채팅';
+	const description = '채팅하기 전에 번호를 저장하는 데 지쳤습니까?';
+
 	let phone = '';
 
 	const onSubmit = () => {
@@ -14,13 +17,18 @@
 	};
 </script>
 
+<svelte:head>
+	<title>{title}</title>
+	<meta name="description" content={description} />
+</svelte:head>
+
 <div class="flex justify-center items-center h-full">
 	<div class="space-y-4 bg-slate-50 p-8 rounded-md shadow-lg w-full max-w-md">
 		<h1 class="font-semibold text-center text-lg text-slate-800">
-			WhatsApp 에 채팅
+			{title}
 		</h1>
 		<p class="text-center text-slate-600">
-			채팅하기 전에 번호를 저장하는 데 지쳤습니까?
+			{description}
 		</p>
 
 		<form on:submit|preventDefault={onSubmit}>
