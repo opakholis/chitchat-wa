@@ -22,8 +22,8 @@
 	<meta name="description" content={description} />
 </svelte:head>
 
-<div class="flex justify-center items-center h-full">
-	<div class="space-y-4 bg-slate-50 p-8 rounded-md shadow-lg w-full max-w-md">
+<div class="h-full flex justify-center items-center">
+	<div class="w-full max-w-md p-8 bg-white rounded-xl shadow-lg space-y-4">
 		<h1 class="font-semibold text-center text-lg text-slate-800">
 			{title}
 		</h1>
@@ -37,13 +37,13 @@
 				aria-label="Phone number"
 				placeholder="전화번호"
 				bind:value={phone}
-				class="w-full border border-slate-300 rounded-md p-2"
+				class="w-full p-2 bg-slate-100 border border-slate-300 rounded-md reset-appearance hover:border-blue-600 focus:border-blue-600"
 			/>
 			<button
 				type="submit"
 				aria-label="Start chat"
 				disabled={!phone}
-				class="w-full py-2 px-4 bg-violet-600 text-white rounded-md mt-4 disabled:bg-violet-400"
+				class="w-full py-2 px-4 bg-blue-600 text-white rounded-md mt-4 reset-appearance disabled:bg-blue-300 hover:bg-blue-500"
 				>갑시다!</button
 			>
 		</form>
