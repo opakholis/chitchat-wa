@@ -1,3 +1,13 @@
+<script>
+  let phoneNumber  = ''
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    window.location.href = `https://wa.me/${phoneNumber}`
+  }
+</script>
+
 <div class="flex justify-center items-center h-full">
 	<div class="space-y-4 bg-slate-50 p-8 rounded-md shadow-lg w-full max-w-md">
 		<h1 class="font-semibold text-center text-lg text-slate-800">
@@ -7,9 +17,10 @@
 			채팅하기 전에 번호를 저장하는 데 지쳤습니까?
 		</p>
 
-		<form>
+		<form on:submit={onSubmit}>
 			<input
 				type="text"
+        bind:value={phoneNumber}
 				placeholder="전화번호"
 				class="w-full border border-slate-300 rounded-md p-2"
 			/>
