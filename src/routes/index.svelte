@@ -1,8 +1,16 @@
 <script lang="ts">
-	let phoneNumber = '';
+	let phone = '';
 
 	const onSubmit = () => {
-		window.location.href = `https://wa.me/${phoneNumber}`;
+		// TODO: nice to have if we adding more dial code
+		const dialCode = '+62'.replace(/^\+/gi, '');
+
+		// validate that we only accept numbers
+		const number = `${dialCode}${phone
+			?.replace(/[^0-9]/gi, '')
+			.replace(new RegExp(`^0|^${dialCode}`, 'gi'), '')}`;
+
+		window.location.href = `https://wa.me/${number}`;
 	};
 </script>
 
@@ -18,13 +26,13 @@
 		<form on:submit|preventDefault={onSubmit}>
 			<input
 				type="tel"
-				bind:value={phoneNumber}
+				bind:value={phone}
 				placeholder="전화번호"
 				class="w-full border border-slate-300 rounded-md p-2"
 			/>
 			<button
 				type="submit"
-				disabled={!phoneNumber}
+				disabled={!phone}
 				class="w-full py-2 px-4 bg-violet-600 text-white rounded-md mt-4 disabled:bg-violet-400"
 				>갑시다!</button
 			>
