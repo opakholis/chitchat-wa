@@ -15,7 +15,7 @@
 			채팅하기 전에 번호를 저장하는 데 지쳤습니까?
 		</p>
 
-		<form on:submit|once={onSubmit}>
+		<form on:submit|preventDefault={onSubmit}>
 			<input
 				type="tel"
 				bind:value={phoneNumber}
